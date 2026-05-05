@@ -24,12 +24,12 @@ done
 echo "=============================================="
 echo "|       First we update the system !         |"
 echo "=============================================="
-xbps-install -Su
+xbps-install -Syu
 
 echo "=============================================="
 echo "|     Now let's install all system pkgs      |"
 echo "=============================================="
-cat pkg/void.txt | xbps-install -u
+xbps-install -yu $(cat pkg/void.txt)
 
 echo "=============================================="
 echo "|     Now let's install Zed                  |"
@@ -51,9 +51,14 @@ EOF
 echo "Creating common folders"
 mkdir "/home/ayabusa/Projects"
 mkdir "/home/ayabusa/PortableApps"
+chown -R ayabusa "/home/ayabusa/Projects" "/home/ayabusa/PortableApps"
 
 echo "Downloading some cool appimages"
 curl "https://vencord.dev/download/vesktop/amd64/appimage" > "/home/ayabusa/PortableApps/vesktop.AppImage"
 curl "https://github.com/ONLYOFFICE/appimage-desktopeditors/releases/latest/download/DesktopEditors-x86_64.AppImage" > "/home/ayabusa/PortableApps/only-office.AppImage"
 curl "https://github.com/Alex313031/thorium/releases/latest/download/Thorium_Browser_138.0.7204.303_AVX2.AppImage" > "/home/ayabusa/PortableApps/thorium.AppImage" 
+chown ayabusa "/home/ayabusa/PortableApps/*"
 echo "You'll need to install them yourself they are in /home/ayabusa/PortableApps"
+
+cp "config/bg/*" "/home/ayabusa/Pictures"
+chown -R ayabusa "/home/ayabusa/Pictures"

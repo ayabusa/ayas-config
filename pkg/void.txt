@@ -15,7 +15,7 @@ ufw
 gufw
 gparted
 timeshift
-vsftp
+vsftpd
 bash-completion
 papirus-icon-theme
 make
@@ -23,3 +23,5 @@ gcc
 git
 gearlever
 wget
+binwalk
+vbindiff
