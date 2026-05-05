@@ -21,3 +21,5 @@ papirus-icon-theme
 make
 gcc
 git
+gearlever
+wget

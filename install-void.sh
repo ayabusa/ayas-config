@@ -36,4 +36,24 @@ echo "|     Now let's install Zed                  |"
 echo "=============================================="
 curl -f https://zed.dev/install.sh | sh
 
+echo "Fixing keyboard"
+mkdir -p /etc/X11/xorg.conf.d
+tee /etc/X11/xorg.conf.d/00-keyboard.conf << 'EOF'
+Section "InputClass"
+    Identifier "system-keyboard"
+    MatchIsKeyboard "on"
+    Option "XkbLayout" "fr"
+    Option "XkbVariant" ""
+    Option "XkbModel" "pc105"
+EndSection
+EOF
 
+echo "Creating common folders"
+mkdir "/home/ayabusa/Projects"
+mkdir "/home/ayabusa/PortableApps"
+
+echo "Downloading some cool appimages"
+curl "https://vencord.dev/download/vesktop/amd64/appimage" > "/home/ayabusa/PortableApps/vesktop.AppImage"
+curl "https://github.com/ONLYOFFICE/appimage-desktopeditors/releases/latest/download/DesktopEditors-x86_64.AppImage" > "/home/ayabusa/PortableApps/only-office.AppImage"
+curl "https://github.com/Alex313031/thorium/releases/latest/download/Thorium_Browser_138.0.7204.303_AVX2.AppImage" > "/home/ayabusa/PortableApps/thorium.AppImage" 
+echo "You'll need to install them yourself they are in /home/ayabusa/PortableApps"
