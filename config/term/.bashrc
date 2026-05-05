@@ -19,4 +19,4 @@ alias psearch='xbps-query -Rs'
 alias pinst='sudo xbps-install -u'
 
 # Prompt
-PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[97m\]\[\e[30;107m\]\[\e[39m\] \[\e[97;102m\]\[\e[39m\] \[\e[30;1m\]\u@\h\[\e[22;39m\] \[\e[92;104m\]\[\e[39m\] \[\e[30;1m\]\w\[\e[22;39m\] \[\e[94;105m\]\[\e[39m\] \[\e[30;1m\]${PS1_CMD1}\[\e[22;39m\] \[\e[95;101m\]\[\e[39m\] \[\e[30;1m\]$?\[\e[22;39m\] \[\e[0;91m\]\n\[\e[0;1m\]\\$\[\e[0m\] '
+PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[97m\]\[\e[30;107m\]\[\e[39m\] \[\e[97;102m\]\[\e[39m\] \[\e[30;1m\]\u@\h\[\e[22;39m\] \[\e[92;106m\]\[\e[39m\] \[\e[30;1m\]\w\[\e[0;48;5;51m\] \[\e[96;105m\]\[\e[39m\] \[\e[30;1m\]${PS1_CMD1}\[\e[22;39m\] \[\e[95;101m\]\[\e[39m\] \[\e[30;1m\]$?\[\e[22;39m\] \[\e[0;91m\]\n\[\e[0;1m\]\\$\[\e[0m\] '

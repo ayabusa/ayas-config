@@ -25,3 +25,4 @@ gearlever
 wget
 binwalk
 vbindiff
+curl
