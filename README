@@ -1,0 +1,46 @@
+
+   ___           _        _____          ____     
+  / _ |__ _____ ( )___   / ___/__  ___  / _(_)__ _
+ / __ / // / _ `//(_-<  / /__/ _ \/ _ \/ _/ / _ `/
+/_/ |_\_, /\_,_/ /___/  \___/\___/_//_/_//_/\_, / 
+     /___/                                 /___/  
+
+===== Aya's config files =====
+
+This repo contains all files to create a 
+good enough workstation on a new xfce void
+linux install.
+
+===== Installation =====
+
+Here are the steps to install this config
+
+1. Install void linux xfce (musl edition
+should work but go with glibc for stability)
+
+2. Download this repo as zip from
+github.com/ayabusa/ayas-config
+
+3. Run these commands
+sudo xbps-install -u xbps unzip
+cd Downloads
+unzip <the downloaded file>
+cd <unziped repo>
+
+4. Run the script as root
+sudo bash install-void.sh
+
+5. Enjoy ;)
+
+===== Notes =====
+
+You should take into consideration the
+following points before using this script.
+
+- It configures the Xorg keyboard as french.
+- It sets some function keys for managing
+  windows on the screen.
+- Some fonts and software are downloaded as
+  AppImages or archive and should be installed
+  by hand using gear lever and gnome-fonts.
+- Some wallpapers are installed in ~/Pictures
