@@ -26,3 +26,5 @@ wget
 binwalk
 vbindiff
 curl
+wmctrl
+xprop

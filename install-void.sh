@@ -54,10 +54,10 @@ mkdir -p "/home/ayabusa/PortableApps"
 chown -R ayabusa "/home/ayabusa/Projects" "/home/ayabusa/PortableApps"
 
 echo "Downloading some cool appimages"
-wget "https://vencord.dev/download/vesktop/amd64/appimage" "/home/ayabusa/PortableApps/vesktop.AppImage"
-wget "https://github.com/ONLYOFFICE/appimage-desktopeditors/releases/latest/download/DesktopEditors-x86_64.AppImage" "/home/ayabusa/PortableApps/only-office.AppImage"
-wget "https://github.com/Alex313031/thorium/releases/latest/download/Thorium_Browser_138.0.7204.303_AVX2.AppImage" "/home/ayabusa/PortableApps/thorium.AppImage" 
-wget "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" "/home/ayabusa/PortableApps/JetBrainsMono.zip"
+wget "https://vencord.dev/download/vesktop/amd64/appimage" -o "/home/ayabusa/PortableApps/vesktop.AppImage"
+wget "https://github.com/ONLYOFFICE/appimage-desktopeditors/releases/latest/download/DesktopEditors-x86_64.AppImage" -o "/home/ayabusa/PortableApps/only-office.AppImage"
+wget "https://github.com/Alex313031/thorium/releases/latest/download/Thorium_Browser_138.0.7204.303_AVX2.AppImage" -o "/home/ayabusa/PortableApps/thorium.AppImage" 
+wget "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" -o "/home/ayabusa/PortableApps/JetBrainsMono.zip"
 chown ayabusa /home/ayabusa/PortableApps/*
 echo "You'll need to install them yourself they are in /home/ayabusa/PortableApps"
 
@@ -69,6 +69,9 @@ chown -R ayabusa "/home/ayabusa/Pictures"
 echo "Configuring Bash"
 cp "config/term/.bashrc" "/home/ayabusa/.bashrc"
 
+echo "Configuring Cinnamon keybinds"
+dconf load /org/cinnamon/desktop/keybindings/ < config/wm/keybindings.conf
+
 echo "Configuring Vim"
 cp "config/vim/.vimrc" "/home/ayabusa/"
 mkdir -p "/home/ayabusa/.vim"
@@ -78,4 +81,4 @@ echo "Configuring Zed"
 mkdir -p "/home/ayabusa/.config/zed"
 cp "config/zed/settings.json" "/home/ayabusa/.config/zed/settings.json"
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
-
+chown -R ayabusa "/home/ayabusa"
