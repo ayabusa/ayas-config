@@ -57,14 +57,28 @@ echo "Downloading some cool appimages"
 wget "https://vencord.dev/download/vesktop/amd64/appimage" -o "/home/ayabusa/PortableApps/vesktop.AppImage"
 wget "https://github.com/ONLYOFFICE/appimage-desktopeditors/releases/latest/download/DesktopEditors-x86_64.AppImage" -o "/home/ayabusa/PortableApps/only-office.AppImage"
 wget "https://github.com/Alex313031/thorium/releases/latest/download/Thorium_Browser_138.0.7204.303_AVX2.AppImage" -o "/home/ayabusa/PortableApps/thorium.AppImage" 
-wget "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" -o "/home/ayabusa/PortableApps/JetBrainsMono.zip"
+wget "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip" -o "/home/ayabusa/Downloads/JetBrainsMono.zip"
 chown ayabusa /home/ayabusa/PortableApps/*
 echo "You'll need to install them yourself they are in /home/ayabusa/PortableApps"
+
+echo "Installing fonts"
+mkdir -p /usr/local/share/fonts
+unzip "/home/ayabusa/Downloads/JetBrainsMono.zip" -d /usr/local/share/fonts
+rm "/home/ayabusa/Downloads/JetBrainsMono.zip" 
+fc-cache -f -v
+
+echo "Installing Bibata cursors"
+wget "https://github.com/ful1e5/Bibata_Cursor/releases/latest/download/Bibata-Modern-Classic.tar.xz" -o "/home/ayabusa/Downloads/cursor.tar.xz"
+mkdir -p "/home/ayabusa/.icons"
+tar -xvf "/home/ayabusa/Downloads/cursor.tar.xz" -C "/home/ayabusa/.icons/"
+rm "/home/ayabusa/Downloads/cursor.tar.xz"
+
+echo "Downloading GTK theme, you'll need to install it yourself"
+wget "https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme/archive/refs/heads/main.zip" -o "/home/ayabusa/PortableApps/catpuccin_gtk.zip"
 
 echo "Copying the backgrounds into Pictures"
 cp config/bg/* "/home/ayabusa/Pictures"
 chown -R ayabusa "/home/ayabusa/Pictures"
-
 
 echo "Configuring Bash"
 cp "config/term/.bashrc" "/home/ayabusa/.bashrc"
@@ -82,3 +96,10 @@ mkdir -p "/home/ayabusa/.config/zed"
 cp "config/zed/settings.json" "/home/ayabusa/.config/zed/settings.json"
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 chown -R ayabusa "/home/ayabusa"
+
+echo "All done, you now need to do the following:"
+echo "- Build the catpuccin theme"
+echo "- Configure all themes and wallpapers in cinnamon"
+echo "- Install Appimages"
+echo "- Setup SSH keys"
+echo "- Have fun :D"
