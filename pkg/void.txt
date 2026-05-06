@@ -28,3 +28,4 @@ vbindiff
 curl
 wmctrl
 xprop
+xz
